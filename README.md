@@ -1,2 +1,2 @@
-# GitHubTest
-sf123
+Java基础知识点收集
+Java常用工具函数
