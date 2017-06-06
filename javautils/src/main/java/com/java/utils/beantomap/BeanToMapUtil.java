@@ -15,9 +15,9 @@ import org.slf4j.LoggerFactory;
  * @author Tim
  *
  */
-public class BeanToMap {
+public class BeanToMapUtil {
 
-	private static final Logger log = LoggerFactory.getLogger(BeanToMap.class);
+	private static final Logger log = LoggerFactory.getLogger(BeanToMapUtil.class);
 	
 	/**
 	 * 将bean转换成map对象
