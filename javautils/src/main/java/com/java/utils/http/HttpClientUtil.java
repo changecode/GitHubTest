@@ -134,7 +134,7 @@ public class HttpClientUtil {
 	}
 	
 	public static void main(String[] args) {
-		String result = doGet("https://www.gitbook.com/@likegitbook/dashboard");
+		String result = doPost("https://www.gitbook.com/@likegitbook/dashboard");
 		System.out.println("=============\n" + result);
 	}
 }
