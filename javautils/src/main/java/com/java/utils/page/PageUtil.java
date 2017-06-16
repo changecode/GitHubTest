@@ -28,7 +28,7 @@ public class PageUtil {
     public PageUtil(int totalCount, int pageNum) {
         this.totalCount = totalCount;
         this.currentPageNum = pageNum;
-        this.pageCount = (int)Math.ceil(1.0 * totalCount / pageSize)
+        this.pageCount = (int)Math.ceil(1.0 * totalCount / pageSize);
         this.currentcount = (pageCount - 1) * pageSize;
         if(pageNum > 1) {
             hasPrePage = true;
