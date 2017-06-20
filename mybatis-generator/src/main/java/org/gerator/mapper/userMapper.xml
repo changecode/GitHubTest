@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.gerator.dao.userMapper" >
+  <resultMap id="BaseResultMap" type="com.gerator.entity.user" >
+    <id column="id_" property="id" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="last_update_by" property="lastUpdateBy" jdbcType="BIGINT" />
+    <result column="enable_" property="enable" jdbcType="BIT" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="nick_" property="nick" jdbcType="VARCHAR" />
+    <result column="password_" property="password" jdbcType="VARCHAR" />
+    <result column="mobile_" property="mobile" jdbcType="VARCHAR" />
+    <result column="email_" property="email" jdbcType="VARCHAR" />
+    <result column="gender_" property="gender" jdbcType="VARCHAR" />
+    <result column="enterprise_id" property="enterpriseId" jdbcType="BIGINT" />
+    <result column="salt_" property="salt" jdbcType="VARCHAR" />
+    <result column="user_code" property="userCode" jdbcType="VARCHAR" />
+    <result column="status_" property="status" jdbcType="VARCHAR" />
+    <result column="tel_" property="tel" jdbcType="VARCHAR" />
+    <result column="job_id" property="jobId" jdbcType="BIGINT" />
+    <result column="user_type" property="userType" jdbcType="VARCHAR" />
+    <result column="department_id" property="departmentId" jdbcType="BIGINT" />
+    <result column="attribute1_" property="attribute1" jdbcType="VARCHAR" />
+    <result column="attribute2_" property="attribute2" jdbcType="VARCHAR" />
+    <result column="attribute3_" property="attribute3" jdbcType="VARCHAR" />
+    <result column="attribute4_" property="attribute4" jdbcType="VARCHAR" />
+    <result column="attribute5_" property="attribute5" jdbcType="VARCHAR" />
+    <result column="attribute6_" property="attribute6" jdbcType="VARCHAR" />
+    <result column="attribute7_" property="attribute7" jdbcType="VARCHAR" />
+    <result column="attribute8_" property="attribute8" jdbcType="VARCHAR" />
+    <result column="attribute9_" property="attribute9" jdbcType="VARCHAR" />
+    <result column="attribute10_" property="attribute10" jdbcType="VARCHAR" />
+    <result column="attribute11_" property="attribute11" jdbcType="VARCHAR" />
+    <result column="attribute12_" property="attribute12" jdbcType="VARCHAR" />
+    <result column="attribute13_" property="attribute13" jdbcType="VARCHAR" />
+    <result column="attribute14_" property="attribute14" jdbcType="VARCHAR" />
+    <result column="attribute15_" property="attribute15" jdbcType="VARCHAR" />
+    <result column="attribute16_" property="attribute16" jdbcType="VARCHAR" />
+    <result column="attribute17_" property="attribute17" jdbcType="VARCHAR" />
+    <result column="attribute18_" property="attribute18" jdbcType="VARCHAR" />
+    <result column="attribute19_" property="attribute19" jdbcType="VARCHAR" />
+    <result column="attribute20_" property="attribute20" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id_, create_time, create_by, last_update_time, last_update_by, enable_, user_name, 
+    nick_, password_, mobile_, email_, gender_, enterprise_id, salt_, user_code, status_, 
+    tel_, job_id, user_type, department_id, attribute1_, attribute2_, attribute3_, attribute4_, 
+    attribute5_, attribute6_, attribute7_, attribute8_, attribute9_, attribute10_, attribute11_, 
+    attribute12_, attribute13_, attribute14_, attribute15_, attribute16_, attribute17_, 
+    attribute18_, attribute19_, attribute20_
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from fw_user
+    where id_ = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fw_user
+    where id_ = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.gerator.entity.user" >
+    insert into fw_user (id_, create_time, create_by, 
+      last_update_time, last_update_by, enable_, 
+      user_name, nick_, password_, 
+      mobile_, email_, gender_, 
+      enterprise_id, salt_, user_code, 
+      status_, tel_, job_id, 
+      user_type, department_id, attribute1_, 
+      attribute2_, attribute3_, attribute4_, 
+      attribute5_, attribute6_, attribute7_, 
+      attribute8_, attribute9_, attribute10_, 
+      attribute11_, attribute12_, attribute13_, 
+      attribute14_, attribute15_, attribute16_, 
+      attribute17_, attribute18_, attribute19_, 
+      attribute20_)
+    values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=BIGINT}, #{enable,jdbcType=BIT}, 
+      #{userName,jdbcType=VARCHAR}, #{nick,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{enterpriseId,jdbcType=BIGINT}, #{salt,jdbcType=VARCHAR}, #{userCode,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{jobId,jdbcType=BIGINT}, 
+      #{userType,jdbcType=VARCHAR}, #{departmentId,jdbcType=BIGINT}, #{attribute1,jdbcType=VARCHAR}, 
+      #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, 
+      #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR}, #{attribute7,jdbcType=VARCHAR}, 
+      #{attribute8,jdbcType=VARCHAR}, #{attribute9,jdbcType=VARCHAR}, #{attribute10,jdbcType=VARCHAR}, 
+      #{attribute11,jdbcType=VARCHAR}, #{attribute12,jdbcType=VARCHAR}, #{attribute13,jdbcType=VARCHAR}, 
+      #{attribute14,jdbcType=VARCHAR}, #{attribute15,jdbcType=VARCHAR}, #{attribute16,jdbcType=VARCHAR}, 
+      #{attribute17,jdbcType=VARCHAR}, #{attribute18,jdbcType=VARCHAR}, #{attribute19,jdbcType=VARCHAR}, 
+      #{attribute20,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gerator.entity.user" >
+    insert into fw_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id_,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="lastUpdateTime != null" >
+        last_update_time,
+      </if>
+      <if test="lastUpdateBy != null" >
+        last_update_by,
+      </if>
+      <if test="enable != null" >
+        enable_,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="nick != null" >
+        nick_,
+      </if>
+      <if test="password != null" >
+        password_,
+      </if>
+      <if test="mobile != null" >
+        mobile_,
+      </if>
+      <if test="email != null" >
+        email_,
+      </if>
+      <if test="gender != null" >
+        gender_,
+      </if>
+      <if test="enterpriseId != null" >
+        enterprise_id,
+      </if>
+      <if test="salt != null" >
+        salt_,
+      </if>
+      <if test="userCode != null" >
+        user_code,
+      </if>
+      <if test="status != null" >
+        status_,
+      </if>
+      <if test="tel != null" >
+        tel_,
+      </if>
+      <if test="jobId != null" >
+        job_id,
+      </if>
+      <if test="userType != null" >
+        user_type,
+      </if>
+      <if test="departmentId != null" >
+        department_id,
+      </if>
+      <if test="attribute1 != null" >
+        attribute1_,
+      </if>
+      <if test="attribute2 != null" >
+        attribute2_,
+      </if>
+      <if test="attribute3 != null" >
+        attribute3_,
+      </if>
+      <if test="attribute4 != null" >
+        attribute4_,
+      </if>
+      <if test="attribute5 != null" >
+        attribute5_,
+      </if>
+      <if test="attribute6 != null" >
+        attribute6_,
+      </if>
+      <if test="attribute7 != null" >
+        attribute7_,
+      </if>
+      <if test="attribute8 != null" >
+        attribute8_,
+      </if>
+      <if test="attribute9 != null" >
+        attribute9_,
+      </if>
+      <if test="attribute10 != null" >
+        attribute10_,
+      </if>
+      <if test="attribute11 != null" >
+        attribute11_,
+      </if>
+      <if test="attribute12 != null" >
+        attribute12_,
+      </if>
+      <if test="attribute13 != null" >
+        attribute13_,
+      </if>
+      <if test="attribute14 != null" >
+        attribute14_,
+      </if>
+      <if test="attribute15 != null" >
+        attribute15_,
+      </if>
+      <if test="attribute16 != null" >
+        attribute16_,
+      </if>
+      <if test="attribute17 != null" >
+        attribute17_,
+      </if>
+      <if test="attribute18 != null" >
+        attribute18_,
+      </if>
+      <if test="attribute19 != null" >
+        attribute19_,
+      </if>
+      <if test="attribute20 != null" >
+        attribute20_,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateTime != null" >
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateBy != null" >
+        #{lastUpdateBy,jdbcType=BIGINT},
+      </if>
+      <if test="enable != null" >
+        #{enable,jdbcType=BIT},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="nick != null" >
+        #{nick,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseId != null" >
+        #{enterpriseId,jdbcType=BIGINT},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="userCode != null" >
+        #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="jobId != null" >
+        #{jobId,jdbcType=BIGINT},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=BIGINT},
+      </if>
+      <if test="attribute1 != null" >
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute7 != null" >
+        #{attribute7,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute8 != null" >
+        #{attribute8,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute9 != null" >
+        #{attribute9,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute10 != null" >
+        #{attribute10,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute11 != null" >
+        #{attribute11,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute12 != null" >
+        #{attribute12,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute13 != null" >
+        #{attribute13,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute14 != null" >
+        #{attribute14,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute15 != null" >
+        #{attribute15,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute16 != null" >
+        #{attribute16,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute17 != null" >
+        #{attribute17,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute18 != null" >
+        #{attribute18,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute19 != null" >
+        #{attribute19,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute20 != null" >
+        #{attribute20,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gerator.entity.user" >
+    update fw_user
+    <set >
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateTime != null" >
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateBy != null" >
+        last_update_by = #{lastUpdateBy,jdbcType=BIGINT},
+      </if>
+      <if test="enable != null" >
+        enable_ = #{enable,jdbcType=BIT},
+      </if>
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="nick != null" >
+        nick_ = #{nick,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password_ = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile_ = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email_ = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        gender_ = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseId != null" >
+        enterprise_id = #{enterpriseId,jdbcType=BIGINT},
+      </if>
+      <if test="salt != null" >
+        salt_ = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="userCode != null" >
+        user_code = #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status_ = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel_ = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="jobId != null" >
+        job_id = #{jobId,jdbcType=BIGINT},
+      </if>
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        department_id = #{departmentId,jdbcType=BIGINT},
+      </if>
+      <if test="attribute1 != null" >
+        attribute1_ = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        attribute2_ = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        attribute3_ = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        attribute4_ = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        attribute5_ = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        attribute6_ = #{attribute6,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute7 != null" >
+        attribute7_ = #{attribute7,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute8 != null" >
+        attribute8_ = #{attribute8,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute9 != null" >
+        attribute9_ = #{attribute9,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute10 != null" >
+        attribute10_ = #{attribute10,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute11 != null" >
+        attribute11_ = #{attribute11,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute12 != null" >
+        attribute12_ = #{attribute12,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute13 != null" >
+        attribute13_ = #{attribute13,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute14 != null" >
+        attribute14_ = #{attribute14,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute15 != null" >
+        attribute15_ = #{attribute15,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute16 != null" >
+        attribute16_ = #{attribute16,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute17 != null" >
+        attribute17_ = #{attribute17,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute18 != null" >
+        attribute18_ = #{attribute18,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute19 != null" >
+        attribute19_ = #{attribute19,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute20 != null" >
+        attribute20_ = #{attribute20,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id_ = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gerator.entity.user" >
+    update fw_user
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      last_update_by = #{lastUpdateBy,jdbcType=BIGINT},
+      enable_ = #{enable,jdbcType=BIT},
+      user_name = #{userName,jdbcType=VARCHAR},
+      nick_ = #{nick,jdbcType=VARCHAR},
+      password_ = #{password,jdbcType=VARCHAR},
+      mobile_ = #{mobile,jdbcType=VARCHAR},
+      email_ = #{email,jdbcType=VARCHAR},
+      gender_ = #{gender,jdbcType=VARCHAR},
+      enterprise_id = #{enterpriseId,jdbcType=BIGINT},
+      salt_ = #{salt,jdbcType=VARCHAR},
+      user_code = #{userCode,jdbcType=VARCHAR},
+      status_ = #{status,jdbcType=VARCHAR},
+      tel_ = #{tel,jdbcType=VARCHAR},
+      job_id = #{jobId,jdbcType=BIGINT},
+      user_type = #{userType,jdbcType=VARCHAR},
+      department_id = #{departmentId,jdbcType=BIGINT},
+      attribute1_ = #{attribute1,jdbcType=VARCHAR},
+      attribute2_ = #{attribute2,jdbcType=VARCHAR},
+      attribute3_ = #{attribute3,jdbcType=VARCHAR},
+      attribute4_ = #{attribute4,jdbcType=VARCHAR},
+      attribute5_ = #{attribute5,jdbcType=VARCHAR},
+      attribute6_ = #{attribute6,jdbcType=VARCHAR},
+      attribute7_ = #{attribute7,jdbcType=VARCHAR},
+      attribute8_ = #{attribute8,jdbcType=VARCHAR},
+      attribute9_ = #{attribute9,jdbcType=VARCHAR},
+      attribute10_ = #{attribute10,jdbcType=VARCHAR},
+      attribute11_ = #{attribute11,jdbcType=VARCHAR},
+      attribute12_ = #{attribute12,jdbcType=VARCHAR},
+      attribute13_ = #{attribute13,jdbcType=VARCHAR},
+      attribute14_ = #{attribute14,jdbcType=VARCHAR},
+      attribute15_ = #{attribute15,jdbcType=VARCHAR},
+      attribute16_ = #{attribute16,jdbcType=VARCHAR},
+      attribute17_ = #{attribute17,jdbcType=VARCHAR},
+      attribute18_ = #{attribute18,jdbcType=VARCHAR},
+      attribute19_ = #{attribute19,jdbcType=VARCHAR},
+      attribute20_ = #{attribute20,jdbcType=VARCHAR}
+    where id_ = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
