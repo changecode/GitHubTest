@@ -98,7 +98,7 @@
 			<version>2.9.0</version>
 		</dependency>
 
-<!-- ftp file upload download -->
+		<!-- ftp file upload download -->
 		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
 		<dependency>
 			<groupId>commons-net</groupId>
@@ -122,4 +122,19 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
 </project>
