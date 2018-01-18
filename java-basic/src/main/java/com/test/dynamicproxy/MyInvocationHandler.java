@@ -2,6 +2,7 @@ package com.test.dynamicproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 public class MyInvocationHandler implements InvocationHandler{
 	
@@ -22,4 +23,7 @@ public class MyInvocationHandler implements InvocationHandler{
             return result;
 	}
 
+	public Object getInstance() {
+		return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
+	}
 }
